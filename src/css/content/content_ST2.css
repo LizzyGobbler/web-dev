@@ -1,0 +1,34 @@
+body {
+	padding-top: 50px;
+}
+
+.image-container img {
+	object-fit: cover;
+	border-radius: 10px;
+	margin-bottom: 2rem;
+}
+
+.image-container {
+	width: 750px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 3rem;
+	margin-bottom: 1rem;
+}
+
+img {
+	transition: all 0.3s ease-in-out;
+	box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+img:hover {
+	transform: scale(1.01);
+	box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+@media screen and (max-width: 768px) {
+	.image-container {
+		width: 90%;
+	}
+}

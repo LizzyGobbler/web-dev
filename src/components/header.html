@@ -1,0 +1,66 @@
+<header>
+	<div class="hamburger-menu">
+		<div class="bar"></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+	</div>
+	<div class="logo-container">
+		<div class="logo">
+			<a href="../pages/home.html">
+				<img src="../../res/logo.svg" alt="Logo" />
+			</a>
+		</div>
+	</div>
+
+	<nav>
+		<ul class="nav-list">
+			<li><a href="../content/content_ST3.html">Overview</a></li>
+			<li class="dropdown-item">
+				<a href="../content/content_ST2.html">Targets</a>
+
+				<ul class="dropdown">
+					<li><a href="../content/content_ST2.html">Goals</a></li>
+					<li><a href="../pages/table.html">Table</a></li>
+				</ul>
+			</li>
+			<li><a href="../content/content_ST4.html">Challenges</a></li>
+			<li>
+				<a href="../content/content_ST1.html">Sustainable Energy</a>
+			</li>
+			<li><a href="../pages/volunteer.html">Volunteer</a></li>
+			<li><a href="../pages/team.html">About Us</a></li>
+		</ul>
+	</nav>
+
+	<div class="header-right">
+		<div class="profile-picture">
+			<a href="../pages/profile.html">
+				<img src="../../res/profile.jpg" alt="Profile Picture" />
+			</a>
+		</div>
+	</div>
+</header>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const hamburgerMenu = document.querySelector('.hamburger-menu');
+		const nav = document.querySelector('nav');
+		const dropdownItems = document.querySelectorAll('.dropdown-item');
+
+		hamburgerMenu.addEventListener('click', function () {
+			nav.classList.toggle('active');
+			hamburgerMenu.classList.toggle('active');
+		});
+
+		dropdownItems.forEach((item) => {
+			const link = item.querySelector('a');
+
+			link.addEventListener('click', function (e) {
+				if (window.innerWidth <= 768) {
+					e.preventDefault();
+					item.classList.toggle('active');
+				}
+			});
+		});
+	});
+</script>

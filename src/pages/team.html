@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Climate Action</title>
+		<link
+			rel="icon"
+			href="https://img.icons8.com/color/48/united-nations.png"
+			type="image/x-icon" />
+
+		<!-- Base styles -->
+		<link rel="stylesheet" href="../../src/css/style.css" />
+        <link rel="stylesheet" href="../../src/css/teampage-styles.css" />
+
+		<link
+			rel="stylesheet"
+			href="../../src/css/hamburger-menu-animation.css" />
+
+		<!-- Font Awesome (Social media icons)-->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+		<script src="../js/theme.js" defer></script>
+		<script src="../js/hamburger-menu.js" defer></script>
+	</head>
+<body>
+    <div id="header-container"></div>
+    <br>
+    <main>
+        
+        <h1><i class="fas fa-users"></i> Our Team</h1>
+        <div class="image_container">
+            <div class="team-member">
+                <img src="../../res/team/sansith.jpg" alt="Sansith Image">
+                <div class="member-details">
+                    <h3>Sansith Fernando</h3>
+                    <p><b>Role : </b>Team Leader/Student 1</p>
+                    <p><b>Contributions : </b>Splash Screen and Volunteer Page </p>
+                    <br>
+                    <div class="icons">
+                        <a href="https://github.com/xerosf" target="_blank"><i class="fa-brands fa-github fa-2x"></i></a>
+                        <a href="https://www.linkedin.com/in/sansith-fernando-90b615311/" target="_blank"><i class="fa-brands fa-linkedin fa-2x"></i></a>
+                        <a href="../pageEditor/pageEditor_ST1.html" target="_blank"><i class="fa fa-paperclip fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="../../res/team/lison.jpg" alt="Lison Image">
+                <div class="member-details">
+                    <h3>Lison Mendis</h3>
+                    <p><b>Role : </b>Student 2</p>
+                    <p><b>Contributions : </b>Global CSS template, <br> Home Page and Table Page</p>
+                    <br>
+                    <div class="icons">
+                        <a href="https://github.com/isblu" target="_blank"><i class="fa-brands fa-github fa-2x"></i></a>
+                        <a href="https://www.linkedin.com/in/lison-mendis-604541286/" target="_blank"><i class="fa-brands fa-linkedin fa-2x"></i></a>
+                        <a href="../pageEditor/pageEditor_ST2.html" target="_blank"><i class="fa fa-paperclip fa-2x"></i></a>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="team-member">
+                <img src="../../res/team/emika.jpg" alt="Emika Image">
+                <div class="member-details">
+                    <h3>Emika Yaddehige</h3>
+                    <p><b>Role : </b>Student 3</p>
+                    <p><b>Contributions : </b>Feedback Page and Team Page</p>
+                    <br>
+                    <div class="icons">
+                        <a href="https://github.com/emika-sandina" target="_blank"><i class="fa-brands fa-github fa-2x"></i></a>
+                        <a href="https://www.linkedin.com/in/emika-sandina-243a98336/" target="_blank"><i class="fa-brands fa-linkedin fa-2x"></i></a>
+                        <a href="../pageEditor/pageEditor_ST3.html" target="_blank"><i class="fa fa-paperclip fa-2x"></i></a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="../../res/team/oshan.jpg" alt="Oshan Image">
+                
+                <div class="member-details">
+                    <h3>Oshan Kodagoda</h3>
+                    <p><b>Role : </b>Student 4</p>
+                    <p><b>Contributions : </b>User Profile Page,<br> Sitemap (SVG)</p>
+                    <br>
+                    <div class="icons">
+                        <a href="https://github.com/oshankkkk" target="_blank"><i class="fa-brands fa-github fa-2x"></i></a>
+                        <a href="https://www.linkedin.com/in/oshan-kodagoda-437b21285/" target="_blank"><i class="fa-brands fa-linkedin fa-2x"></i></a>
+                        <a href="../pageEditor/pageEditor_ST4.html" target="_blank"><i class="fa fa-paperclip fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+
+        <div class="featured-cards">
+            <div class="featured-card">
+              <i class="fa-brands fa-github fa-3x"></i>
+              <h3>Source Control</h3>
+              <p>
+                Version Control have been carried out using GitHub.
+              </p>
+              <br>
+              <p><b>Link to the GitHub repository: </b><a href="https://github.com/xerosf/web-dev-coursework"> https://github.com/xerosf/web-dev-coursework</a></p>
+              <p><b>Link to the GitHub pages: </b><a href="https://xerosf.github.io/web-dev-coursework/"> https://xerosf.github.io/web-dev-coursework/</a></p>
+            </div>
+        </div>
+        <br> <br> <br>
+        <p id="thanku"><b>Thank You!</b></p>
+    </main>
+
+    <div id="footer-container"></div>
+    <div id="theme-switcher"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('../components/header.html')
+                .then((response) => response.text())
+                .then((data) => {
+                    document.getElementById('header-container').innerHTML =
+                        data;
+                    if (typeof adjustBodyPadding === 'function') {
+                        adjustBodyPadding();
+                    }
+                    if (typeof initHamburgerMenu === 'function') {
+                        initHamburgerMenu();
+                    }
+                })
+                .catch((error) =>
+                    console.error('Error loading header:', error)
+                );
+
+            // Load the footer
+            fetch('../components/footer.html')
+                .then((response) => response.text())
+                .then((data) => {
+                    document.getElementById('footer-container').innerHTML =
+                        data;
+                })
+                .catch((error) =>
+                    console.error('Error loading footer:', error)
+                );
+
+            // Load the theme switcher
+            fetch('../components/theme_switcher.html')
+                .then((response) => response.text())
+                .then((data) => {
+                    document.getElementById('theme-switcher').innerHTML =
+                        data;
+                    if (typeof initThemeToggle === 'function') {
+                        initThemeToggle();
+                    }
+                })
+                .catch((error) =>
+                    console.error('Error loading theme switcher:', error)
+                );
+        });
+    </script>
+</body>
+
+</html>

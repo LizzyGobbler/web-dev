@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Climate Action</title>
+    <link
+      rel="icon"
+      href="https://img.icons8.com/color/48/united-nations.png"
+      type="image/x-icon"
+    />
+
+    <!-- Base styles -->
+    <link rel="stylesheet" href="../../src/css/style.css" />
+    <link rel="stylesheet" href="../../src/css/content/content_ST3.css" />
+    <link rel="stylesheet" href="../../src/css/components/responsive-back-to-top.css">
+
+
+    <link rel="stylesheet" href="../../src/css/hamburger-menu-animation.css" />
+
+    <!-- Font Awesome (Social media icons)-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <script src="../js/theme.js" defer></script>
+    <script src="../js/hamburger-menu.js" defer></script>
+    <script src="../js/back-to-top.js" defer></script>
+
+  </head>
+  <br /><br />
+
+  <body>
+    <div id="header-container"></div>
+    <main id="main-content">
+      <h1 class="title">Overview</h1>
+      <br />
+      <div class="image_container">
+        <img
+          src="../../res/content/ST3/content_st3_img1.jpg"
+          id="greenearth_img"
+          alt="SDGs"
+        />
+      </div>
+
+      <div class="content">
+        <h1>
+          <i class="fas fa-globe"></i> What are Sustainable Development Goals
+          (SDGs)?
+        </h1>
+        <p>
+          The Sustainable Development Goals (SDGs) are 17 global objectives
+          adopted by the United Nations in 2015 to address various global
+          challenges such as poverty, inequality, and environmental degradation.
+          These goals would assist for a sustainable future by 2030.
+        </p>
+
+        <br />
+
+        <p>
+          The SDGs provide a universal call to action, urging governments,
+          businesses, and individuals to work together toward a better world.
+          They emphasize the need for economic growth, social inclusion, and
+          environmental sustainability. Achieving these goals requires
+          collective efforts, innovative solutions, and global partnerships to
+          create a more equitable and resilient future for all.
+        </p>
+      </div>
+
+      <h1 class="title">Climate Change</h1>
+      <br />
+
+      <div class="card-container">
+        <div class="content">
+          <h2><i class="fas fa-cloud-sun"></i> What is Climate Change?</h2>
+          <p>
+            Climate change is the long-term shift in temperature and weather
+            patterns, accelerated by human activities like burning fossil fuels
+            and deforestation. It leads to global warming, extreme weather, and
+            ecosystem disruptions.
+          </p>
+          <br />
+          <p>
+            Without immediate action, rising global temperatures will continue
+            to cause sea-level rise, extreme weather events, biodiversity loss,
+            and resource scarcity, disproportionately affecting vulnerable
+            communities.
+          </p>
+        </div>
+
+        <div class="content">
+          <h2><i class="fas fa-cloud"></i> SDG 13 - Climate Action</h2>
+          <p>
+            SDG 13 - Climate Action calls for urgent action to combat climate
+            change and its impacts. It emphasizes the need for countries to
+            integrate climate policies, reduce greenhouse gas emissions, and
+            strengthen resilience against environmental disasters.
+          </p>
+        </div>
+      </div>
+
+      <div class="featured-section">
+        <h2>Why Climate Action is important?</h2>
+        <div class="featured-cards">
+          <div class="featured-card">
+            <i class="fas fa-tree fa-3x"></i>
+            <h3>Protects Biodiversity and EcoSystems</h3>
+            <p>
+              Protects biodiversity by preventing deforestation and habitat
+              loss.
+            </p>
+          </div>
+
+          <div class="featured-card">
+            <i class="fas fa-thermometer-half fa-3x"></i>
+            <h3>Prevents Global Warming</h3>
+            <p>
+              Reduces greenhouse gases to stop rising temperatures and extreme
+              weather.
+            </p>
+          </div>
+
+          <div class="featured-card">
+            <i class="fas fa-cloud fa-3x"></i>
+            <h3>Reduces Extreme Weather Impacts</h3>
+            <p>
+              Lowers the risk of hurricanes, wildfires, and floods that harm
+              communities.
+            </p>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div id="back-to-top">
+        <button id="back-to-top-button" title="Go to top"><a href="#top"><i class="fas fa-arrow-up"></i>
+        </a></button>
+      </div>
+    </main>
+    <div id="footer-container"></div>
+    <div id="theme-switcher"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("../components/header.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("header-container").innerHTML = data;
+            if (typeof adjustBodyPadding === "function") {
+              adjustBodyPadding();
+            }
+            if (typeof initHamburgerMenu === "function") {
+              initHamburgerMenu();
+            }
+          })
+          .catch((error) => console.error("Error loading header:", error));
+
+        // Load the footer
+        fetch("../components/footer.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("footer-container").innerHTML = data;
+          })
+          .catch((error) => console.error("Error loading footer:", error));
+        
+                //Back to top button
+        fetch('../components/back_to_top.html')
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById('back-to-top').innerHTML = data;
+          if (typeof initBackToTop === 'function') {
+            initBackToTop();
+          }
+          })
+          .catch((error) => console.error('Error loading back to top button:', error));  
+
+
+
+        // Load the theme switcher
+        fetch("../components/theme_switcher.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("theme-switcher").innerHTML = data;
+            if (typeof initThemeToggle === "function") {
+              initThemeToggle();
+            }
+          })
+          .catch((error) =>
+            console.error("Error loading theme switcher:", error)
+          );
+      });
+    </script>
+  </body>
+</html>
